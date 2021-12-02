@@ -47,7 +47,7 @@ function Index(props) {
     useEffect(() => {
         //console.log(props.AuthStore.appState.user.access_token)
         //const token = (props.AuthStore.appState != null) ? props.AuthStore.appState.user.access_token : null;
-        const token = props.AuthStore.appState.user.access_token;
+        const token = (props.AuthStore.appState != null) ? props.AuthStore.appState.user.access_token : null;
         axios.get('http://localhost:4000/api/user-operation-data',{
             headers:{
                 Authorization: 'Bearer '+ token
